@@ -13,8 +13,5 @@ public class Movie_calc{
     System.out.println("Biggest worldwide gross: " +  Movie.get_biggest_gross());
     System.out.println("Most profitable: " + Movie.get_most_profitable());
 
-
-
-
   }
 }

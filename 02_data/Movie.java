@@ -7,6 +7,7 @@ public class Movie{
   private double gross;
   private double profitability;
   private static ArrayList<Movie> film_list = new ArrayList<>();
+  private static Movie null_movie = new Movie("N/a", -1.0, -1.0);
 
   public Movie(String title, double budget, double gross){
     this.title = title;
@@ -16,10 +17,7 @@ public class Movie{
     profitability = (gross - budget) / budget;
     film_list.add(this);
   }
-  private static Movie null_movie(){
-    Movie null_movie = new Movie("N/a", -1.0, -1.0);
-    return null_movie;
-  }
+  
   public String get_title(){
     return title;
   }
@@ -45,7 +43,7 @@ public class Movie{
   }
 
   public static String get_biggest_budget(){
-    Movie biggest = null_movie();
+    Movie biggest = null_movie;
     for (Movie film : film_list){
       if (film.get_budget() > biggest.get_budget()){
         biggest = film;
@@ -55,7 +53,7 @@ public class Movie{
   }
 
   public static String get_biggest_gross(){
-    Movie biggest = null_movie();
+    Movie biggest = null_movie;
     for (Movie film : film_list){
       if (film.get_gross() > biggest.get_gross()){
         biggest = film;
@@ -65,7 +63,7 @@ public class Movie{
   }
 
   public static String get_most_profitable(){
-    Movie biggest = null_movie();
+    Movie biggest = null_movie;
     for (Movie film : film_list){
       if (film.get_profit() > biggest.get_profit()){
         biggest = film;
